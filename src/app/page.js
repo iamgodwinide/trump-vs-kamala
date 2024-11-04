@@ -87,7 +87,7 @@ const Home = () => {
       console.log('Connected to wallet:', response.publicKey.toString());
 
       // Get token balance
-      const tokenBalance = await checkTokenBalance("EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v");
+      const tokenBalance = await checkTokenBalance(process.env.NEXT_PUBLIC_TOKEN_ADDRESS);
       setTokenBalance(tokenBalance);
       setConnected(true);
     } catch (error) {
@@ -142,6 +142,8 @@ const Home = () => {
         wallet.publicKey,
         { mint: mintPubkey }
       );
+
+      console.log(tokenAccounts);
 
       if (tokenAccounts.value.length === 0) {
         return 0;
@@ -320,7 +322,7 @@ const Home = () => {
             }}
           >
             {
-              recentVotes.reverse().map((v) => (
+              recentVotes.map((v) => (
                 <Update address={v.address} choice={v.choice} key={v.address} />
               ))
             }

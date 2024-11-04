@@ -12,13 +12,15 @@ export const GET = async () => {
     const totalVotes = await Vote.countDocuments();
     const trumpVotes = await Vote.find({ choice: TRUMP }).countDocuments();
     const kamalaVotes = await Vote.find({ choice: KAMALA }).countDocuments();
-    const recentVotes = await Vote.find().sort({ _timestamps: -1 });
+    const recentVotes = await Vote.find();
+
+    const _recentVotes = recentVotes.reverse();
 
     return new Response(JSON.stringify({
         totalVotes,
         trumpVotes,
         kamalaVotes,
-        recentVotes: recentVotes.slice(0, 100)
+        recentVotes: _recentVotes.slice(0, 100)
     }), {
         status: 200,
         headers: {
