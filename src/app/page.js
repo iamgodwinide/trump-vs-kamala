@@ -164,10 +164,10 @@ const Home = () => {
         notifyError("Connect wallet to vote!");
         return
       }
-      // if (tokenBalance < 1) {
-      //   notifyError("Insufficient tokens");
-      //   return;
-      // }
+      if (tokenBalance < 1) {
+        notifyError("Insufficient tokens");
+        return;
+      }
       setVoting(true);
       const res = await fetch("/api/data", {
         method: "POST",
