@@ -1,0 +1,24 @@
+.ctrump {
+    background-color: #FF5861;
+}
+
+.ckamala {
+    background-color: #5D14EE;
+}
+
+.spin {
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
