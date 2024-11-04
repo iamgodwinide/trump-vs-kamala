@@ -320,7 +320,7 @@ const Home = () => {
             }}
           >
             {
-              recentVotes.map((v) => (
+              recentVotes.reverse().map((v) => (
                 <Update address={v.address} choice={v.choice} key={v.address} />
               ))
             }
