@@ -274,7 +274,7 @@ const Home = () => {
               <div className='text-2xl font-bold text-black'>{((trumpVotes / votes).toFixed(2) * 100) | 0}%</div>
               <div className='text-2xl font-bold text-black'>{((kamalaVotes / votes).toFixed(2) * 100) | 0}%</div>
             </div>
-            <progress className="progress progress-error h-4 w-full kamala-bg mb-4" value={Math.floor(trumpVotes / votes) * 100} max="100"></progress>
+            <progress className="progress progress-error h-4 w-full kamala-bg mb-4" value={Math.floor((trumpVotes / votes) * 100)} max="100"></progress>
             <div className="w-full flex flex-row">
               <div className={`${styles.ctrump} flex-1`}>
                 <img src={"/trump.png"} alt='Donald Trump' width={100} height={100} className='w-full h-full' />
