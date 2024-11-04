@@ -70,7 +70,7 @@ const Home = () => {
 
 
   // Initialize Solana connection
-  const connection = new Connection("https://solana-mainnet.g.alchemy.com/v2/VPBhOxWmEg_e4f0aFPYVtAKA5OU7n0zZ", { commitment: "confirmed", confirmTransactionInitialTimeout: 60_000 });
+  const connection = new Connection(process.env.NEXT_PUBLIC_RPC_ENDPOINT, { commitment: "confirmed", confirmTransactionInitialTimeout: 60_000 });
 
   // Connect wallet function
   const connectWallet = async () => {
