@@ -5,6 +5,7 @@ import styles from './home.module.css'
 import Update from './components/Update'
 import { Connection, PublicKey } from '@solana/web3.js';
 import toast, { Toaster } from 'react-hot-toast';
+import Link from 'next/link';
 
 
 const Home = () => {
@@ -322,8 +323,8 @@ const Home = () => {
               <div className='text-center text-black text-lg'>You need to hold $vote to vote</div>
               <div className="my-2 divider"></div>
               <div className='flex justify-between items-center gap-10'>
-                <a href='/' className='px-4 py-2 bg-sky-500 text-lg text-white rounded'>Buy on BullX</a>
-                <a href='/' className='px-4 py-2 bg-sky-500 text-lg text-white rounded'>Buy on Pumpfun</a>
+                <Link href='/' className='px-4 py-2 bg-sky-500 text-lg text-white rounded'>Buy on BullX</Link>
+                <Link href='/' className='px-4 py-2 bg-sky-500 text-lg text-white rounded'>Buy on Pumpfun</Link>
               </div>
             </div>
           }
@@ -352,7 +353,7 @@ const Home = () => {
       {/* loading overlay */}
       {
         loading
-        && <div className='fixed z-50 w-full h-full top-0 left-0 bg-indigo-950 bg-opacity-55 flex flex-col justify-center items-center'>
+        && <div className='fixed z-50 w-`full h-full top-0 left-0 bg-indigo-950 bg-opacity-55 flex flex-col justify-center items-center'>
           <img src="spin3.png" width={50} className={styles.spin} />
         </div>
       }
